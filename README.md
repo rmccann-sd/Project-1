@@ -103,10 +103,12 @@ In order to use the playbook, you will need to have an Ansible control node alre
 **Edit the Hosts file to update and make Ansible run on specific machine, and specify which machine to install ELK server on.**
 
 - Which URL do you navigate to in order to check that the ELK server is running?
-**_'ElkServer IP'_:5601**
+```**_'ElkServer IP'_:5601**
+```
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-**Ansible-playbook install-elk.yml**
+```**Ansible-playbook install-elk.yml**
+```
 
 
 
