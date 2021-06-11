@@ -1,0 +1,103 @@
+In this section you will answer the ofllowign questions related to your project and what you have learned so far in class.  
+
+INTERVIEW
+Domain: Logging and Monitoring
+Question 1: Setting Alerts in a New Monitoring System
+How do you determine which alerts to set in a new monitoring system?
+1.	Restate the Problem
+When working in a new monitoring system, the best way to determine which alerts to set. 
+
+2.	Provide a Concrete Example Scenario
+
+○	Describe the network you built for Project 1. Identify the VMs on the network and what they do.
+I set up an Azure network with Docker and Ansible.  I also created two virtual machines as well as a jumpbox that allowed me to SSH in remotely.
+
+○	Which VMs should be publicly accessible?
+The publicly accessible VM’s in my network were VM 1 & 2 as well as my Jumpbox.  For testing purposes I turned on access to my ElkStack VM but only for testing.  
+
+○	Which VMs should not be publicly accessible?
+The ElkStack because it has my Docker and Ansible programs through it. 
+
+3.	Explain the Solution Requirements
+
+○	Consider the VMs that should not be publicly accessible from the internet. Which alert(s) should these VMs fire and when?
+I should get an IPS snort alert when a VM that is locked down is attempted to be accessed. 
+
+○	Why should these VMs be associated with these alerts?
+Because they should be set with an Intrusion Prevention System so that the traffic attempting to infiltrate them is immediately blocked.  
+
+4.	Explain the Solution Details
+○	Which tool in Project 1 would you use to set such an alert?
+Deploying the Azure Firewall within the Network Security Group which includes the Threat Intelligence feature to deny an attack and alert me to intruders would be the best solution.
+
+○	What would the alert rule be? For example, would the alert fire upon a failed SSH attempt or a ping request?
+I would set it to monitor and log the virtual machine traffic and configure it to alert me if something malicious occurred within the network, subnet or NIC with the help of traffic analytics. The rule would alert on suspicious or malicious activity at a moderate level but could be adjusted as needed.  
+
+5.	Identify Advantages and Disadvantages
+○	Are there any malicious circumstances that the alert(s) discussed above do not address?
+Yes, which include failed SSH attempts over multiple tries and ping requests that happen at more of an interval instead of randomly.  
+Question 2: Challenges of Collecting Large Amounts of Log Data
+What are the challenges of collecting huge amounts of log data? How do security analysts deal with them?
+1.	Restate the Problem
+Massive amounts of Log Data can be a daunting task for some, however security analysts can parse through the data quickly with the right tools. 
+
+2.	Provide a Concrete Example Scenario
+
+○	In Project 1, when did you deal with log data?
+While working in Kibana after setting up the Docker.
+○	What kind(s) of data did you investigate?
+Unique Visitors querying down by Country and by Operating System, Response Codes, IP Source and Destination, Heat Maps and more. 
+○	How much data were you dealing with?
+Bytes of data, internet traffic mainly. 
+○	What were you looking for?
+Investigating why there was a surge in traffic at certain times of the day and what kind of traffic it was, malicious or otherwise. 
+3.	Explain the Solution Requirements
+
+○	What information did you need to find what you were looking for?
+What span of time, where to set that time, and which data type was needed to collect the information needed for the report. 
+○	What does an analyst need to analyze large amounts of log data to find this information?
+Some knowledge how to query the data so they can sift through at a faster rate is probably useful.  
+○	In Project 1, what tools did you use to analyze log data?
+I, poorly, attempted to query data using the tool provided by Kibana, but ultimately went the long route going log by log and manually setting time and date to find results. 
+4.	Explain the Solution Details
+
+○	How did you use these tools to find the log data? E.g., which charts, graphs, etc. were useful for parsing the logs?
+I mainly stuck to the dashboard and ventured a little bit into the visualize tab.
+5.	Identify Advantages and Disadvantages of the Solution
+
+○	What kinds of data did you not inspect during Project 1?
+There were a few areas in the data I was not able to track down.  Tuesday, I confessed that I was trying to troubleshoot gremlins in my VM and was not fully engaged in Rene’s instructions on zoom during Saturday’s class.  So I missed a lot.  Trying to go back and rewatch, I got some answers, but my answer sheet tells the full story.  
+○	Would having access to this additional data have changed your process or conclusions? If so, how?
+I’m not 100 percent sure if it would have changed the process.  Probably.  Trying to successfully query the data would have been a fun challenge to overcome.  
+
+Question 3: Escalating Security Events
+How do you determine if a security event or alert is important enough for escalation?
+1.	Restate the Problem
+Assessing level of a threat for importance of escalation as a security event or alert.
+
+2.	Provide a Concrete Example Scenario
+
+○	What kinds of events and alerts did you encounter in Project 1?
+Security Events or Threats came out to one or two as we attempted to set up security zones within our Network Security Group.  I might consider permission denied (public key) errors when trying to SSH into my network an event, but that was due to gremlins in my system. 
+○	Which of these events was most interesting or suspicious?
+Frustrating would be the better adjective.  Though it was interesting when I had to keep adjusting my public key on my VM’s and jumpbox.  I’m sure it was the setup on my part causing me to be locked out of my VM while attempting to SSH into it. 
+○	Why was the event suspicious? What led you to investigate it?
+Because I didn’t have access to my own network that I built.  I had to investigate it or I would fail the module.  What we ultimately assessed it to was that my keygen was creating a longer than normal key, almost double the length.  When the shorter key was entered, it held in place where the longer key was not staying, even though it let me in temporarily at the time.  
+3.	Explain the Solution Requirements
+
+○	What do you need to figure out in order to determine if this event is worth escalating?
+Whether or not I can solve the issue myself or not.  If I am unable to solve it, I have to escalate it to someone who has a larger toolbox than mine and hopefully it is someone willing to walk me through their process while they work so I can learn from them.  
+4.	Explain the Solution Details
+
+○	How did you use Kibana to find this information?
+I did not use Kibana to solve this problem.  Rene and I solved it. 
+
+5.	Identify Advantages and Disadvantages of the Solution
+
+○	How confident are you in your conclusion?
+I was able to login today to my jumpbox and start my docker so pretty confident.  
+
+○	What additional data would be useful to determine if your conclusions are correct?
+Regarding the keygen, short or long? Several more tests involving generating keys in ubuntu and then testing them out by logging in successfully or not into two or three different VM’s. As well as research as to the difference between a short keygen and a long one.  
+
+
