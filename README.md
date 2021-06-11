@@ -74,7 +74,7 @@ The following screenshot displays the result of running `docker ps` after succes
 
  **Name: elk  Container ID: ec11bb2a1422 Filename: sudo docker ps.png**
 
-![DOCKER](https://github.com/rmccann-sd/Project-1/blob/61f70d42d7061594a6c0e97463901d72cd78c3d4/sudo%20docker%20ps.png)
+![DOCKER](https://github.com/rmccann-sd/Project-1/blob/c69530dc45c4b10e4a3e007c6287b7bc7407f082/sudo%20docker%20ps.png)
 
 ## Target Machines & Beats
 This ELK server is configured to monitor the following machines:
