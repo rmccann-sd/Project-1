@@ -89,8 +89,7 @@ We have installed the following Beats on these machines:
 
 These Beats allow us to collect the following information from each machine:
 -  In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. 
-Filebeat collects logs of data for Kibana.
-Metricbeat organizes the stats in Kibana.
+**Filebeat collects logs of data for Kibana. Metricbeat organizes the stats in Kibana.**
 
 
 
@@ -98,16 +97,16 @@ Metricbeat organizes the stats in Kibana.
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 - Which file is the playbook? Where do you copy it? 
-Ansible-playbook.yml from the Day 1 Student Guide.
+**Ansible-playbook.yml from the Day 1 Student Guide.**
 
 - Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?
-Edit the Hosts file to update and make Ansible run on specific machine, and specify which machine to install ELK server on.
+**Edit the Hosts file to update and make Ansible run on specific machine, and specify which machine to install ELK server on.**
 
 - Which URL do you navigate to in order to check that the ELK server is running?
-<ElkServer IP>:5601 
+**_'ElkServer IP'_:5601**
 
 As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc.
-Ansible-playbook install-elk.yml
+**Ansible-playbook install-elk.yml**
 
 
 
